@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="relative mx-4 p-6">
+        <div class="flex items-center justify-between">
+            <div class="pt-2">
+                <img src="Screenshot 2022-05-02 182055.png" alt="" height="80%" width="50%">
+            </div>
+            <div class="hidden md:flex space-x-8 pt-3">
+                <a href="index.html" class=" text-cyan-600 text-lg hover:text-cyan-800 font-bold">Home</a>
+                <a href="#"class="text-cyan-600 text-lg hover:text-cyan-800 font-bold">About Us</a>
+                <a href="#"class="text-cyan-600 text-lg hover:text-cyan-800 font-bold">Contact</a>
+                <div>
+                    <button class="text-cyan-600 text-lg hover:text-cyan-800 font-bold focus:outline-none" id="menu-btn">LogIn</button>
+                    
+                    <div class="absolute shadow-xl  bg-gray-200 hidden flex-col rounded-lg mt-1 p-2 text-base w-32 right-0" id="dropdown">
+                        <a href="LoginPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">HOD</a>
+                        <a href="LoginTeacherPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">Teachers</a>
+                        <!-- <a href="LoginStudentPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">Students</a> -->
+                    </div>
+                </div>
+            
+                <script>
+                    window.addEventListener('DOMContentLoaded', ()=> {
+                        const menuBtn = document.querySelector('#menu-btn')
+                        const dropdown = document.querySelector('#dropdown')
+                        
+                        menuBtn.addEventListener('click', () => {
+                            /* if(dropdown.classList.contains('hidden')){
+                                dropdown.classList.remove('hidden');
+                                dropdown.classList.add('flex');
+                            }else{
+                                dropdown.classList.remove('flex')
+                                dropdown.classList.add('hidden')
+                            } */
+            
+                            dropdown.classList.toggle('hidden')
+                            dropdown.classList.toggle('flex')
+                        })
+            
+                    })
+                </script>
+            </div>
+        </div>
+    </nav>
+    <main class="relative w-screen sm:w-2/3 md:w-4/5 pt-1 px-2 mx-16 mt-8 ml-40 ">
+       <div class="relative container flex items-center shadow-xl w-full h-full" style="background-image:url(pexels-pixabay-289737.jpg)" >
+           <div class=" mx-24 mt-20  pb-8  ">
+            <div class="text-7xl text-bold text-white"><h1>Manages College Records</h1></div>
+            <br><br>
+            <div class="text-xl">
+            <p>Here you can manage your college records just like the details of staff members and students. Manage their personal details
+                storing in a database and also helps you to delete aur edit those existing records. We provide logins according to the
+                user like as an HOD (Head of Department), they can manage staff members and students whereas login as teacher can manage 
+                their students and take attendence also of their classes and also view the reports of the attendence as per semester basis
+                and also can view attendence reports of class or of a specific student. Here the user also can see their profile and achievements and thier data , their roles and their controls.
+                <br><br><br><br><br><br>
+            </p></div>
+           </div>
+       </div>
+    </main>
+</body>
+</html>

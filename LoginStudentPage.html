@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .div1{
+        text-align: right;
+     /*   border: 3px solid white;*/
+        position: absolute;
+        left:1200px;
+    }
+    .formdiv{
+        width:404px;
+        height: 450px;
+        padding-left: 0;
+        padding-top: 0;
+        padding-right: 50px;
+        position:relative;
+        left:500px;
+        top:100px;
+        color: black;
+        background-color:rgb(218, 218, 218);
+        box-shadow: 0 0 5px grey;
+    }
+    .bodydiv{
+        height : 656px;
+      /*  background-image: url('3d-grunge-room-interior-with-spotlight-smoky-atmosphere-background_1048-11333.webp');*/
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .form-control{
+        width:250px;
+        position: relative;
+        left:30px;
+    }
+    .form-check{
+        position: relative;
+        left:50px;
+    }
+    .headdiv{
+        
+        color:white;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        height: 100px;
+        padding-top: 20px;
+        width:405px;
+        background-color:black;
+        font-family: 'Anybody', cursive;
+       /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
+    }
+    .row{
+      padding-left: 30px;
+    }
+    .btn{
+      margin-left: 30px;
+      border: 2px solid black;
+      background-color: black;
+      color: white;
+      position: relative;
+      top: 10px;
+      margin-top: 20px;
+    }
+    .div1{
+        text-align: right;
+     /*   border: 3px solid white;*/
+        position: absolute;
+        left:1200px;
+    }
+    .link2{
+        margin-top: 20px;
+        position: relative;
+        left: 120px;
+        top: 15px;
+    }
+    .link2:hover{
+        text-decoration: underline;
+    }
+</style>
+<script>
+  function validationform()
+  {
+      let x = document.forms["form1"]["username"].value;
+      let i = x.indexOf("@");
+      let j = x.lastIndexOf(".");
+      let y = i - j;
+      if(x == "" || (x[0] >= "0" && x[0] <= "9")||i <= 0 || y <= 1)
+      {
+          alert("Username Invalid");
+          return false;
+      }
+  }
+</script>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="font-size:50px">KeepUp</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="div1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="mainloginpage.html" style="font-size:25px; padding-left: 90%;">Home</a>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </nav>
+      <div class = "bodydiv">
+        <div class="formdiv">
+          <form action="VerifyStudentLogin.php" method="post">
+              <div class="headdiv">
+                      LogIn
+              </div>
+              <div class="row mb-3">
+                <label for="inputId3" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="inputid4" name="id" autocomplete="off">
+                </div>
+              </div>
+                <div class="row mb-3">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail4" name="username" autocomplete="off">
+                  </div>
+                </div>
+              <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" id="inputPassword3" name="passwd">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="dept" class="col-sm-2 col-form-label">Dept</label>
+                <div class="col-sm-10">
+                <select id="dept" name="dept" class="form-control"> 
+                        <option value="0">Select dept</option>
+                        <option value="1">BA in Spanish</option>
+                        <option value="2" >BBA in Banking, Financial Services & Insurance</option>
+                        <option value="3" >BBA in Facilities & Hygiene Management</option>
+                        <option value="4" >B.Sc in Medical Laboratory Technology</option>
+                        <option value="5" >BCA</option>
+                        <option value="6" >Diploma in Computer Engineering</option>
+                        <option value="7" >Diploma in Pharmacy</option>
+                </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" onclick="validationform()" style="font-weight: 600; margin-top: 10px;">Log in</button>
+              
+            </form>
+        </div>
+      </div>
+</body>
+
+</html>

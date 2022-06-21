@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+  function validationform()
+  {
+      let x = document.forms["form1"]["username"].value;
+      let i = x.indexOf("@");
+      let j = x.lastIndexOf(".");
+      let y = i - j;
+      if(x == "" || (x[0] >= "0" && x[0] <= "9")||i <= 0 || y <= 1)
+      {
+          alert("Username Invalid");
+          return false;
+      }
+  }
+</script>
+<body>
+  <!-- NavBar -->
+  <nav class="relative container mx-16 p-6">
+    <div class="flex items-center justify-between">
+        <div class="pt-2">
+            <img src="Screenshot 2022-05-02 182055.png" alt="" height="80%" width="50%">
+        </div>
+        <div class="hidden md:flex space-x-8 pt-3">
+          <a href="index.html" class=" text-cyan-600 text-lg hover:text-cyan-800 font-bold">Home</a>
+          <a href="#"class="text-cyan-600 text-lg hover:text-cyan-800 font-bold">About Us</a>
+          <a href="#"class="text-cyan-600 text-lg hover:text-cyan-800 font-bold">Contact</a>
+          <div>
+              <button class="text-cyan-600 text-lg hover:text-cyan-800 font-bold focus:outline-none" id="menu-btn">LogIn</button>
+              
+              <div class="absolute shadow-xl  bg-gray-200 hidden flex-col rounded-lg mt-1 p-2 text-base w-32 right-0 z-10" id="dropdown">
+                  <a href="LoginPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">HOD</a>
+                  <a href="LoginTeacherPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">Teachers</a>
+                  <!-- <a href="LoginStudentPage.html" class="px-4 py-2 hover:bg-cyan-600 hover:text-white rounded">Students</a> -->
+              </div>
+          </div>
+      
+          <script>
+              window.addEventListener('DOMContentLoaded', ()=> {
+                  const menuBtn = document.querySelector('#menu-btn')
+                  const dropdown = document.querySelector('#dropdown')
+                  
+                  menuBtn.addEventListener('click', () => {
+                      /* if(dropdown.classList.contains('hidden')){
+                          dropdown.classList.remove('hidden');
+                          dropdown.classList.add('flex');
+                      }else{
+                          dropdown.classList.remove('flex')
+                          dropdown.classList.add('hidden')
+                      } */
+      
+                      dropdown.classList.toggle('hidden')
+                      dropdown.classList.toggle('flex')
+                  })
+      
+              })
+          </script>
+      </div>
+</nav>
+<!-- Dashboard -->
+<div class="relative p-8  bg-cyan-600">
+  <div class="flex items-center justify-between">
+    <div class=" text-3xl px-16 text-white font-bold">
+      HOD Login
+    </div>
+</div>
+</div>
+<!-- Form -->
+<div class="max-w-8xl">
+  <form class="bg-white shadow-md rounded px-24 pt-12 pb-8 mb-4 h-96" action="VerifyHODLogin.php" method="post">
+    <div class="mb-8">
+      <label class="block text-gray-700 text-base font-semibold mb-2" for="username">
+        Username
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" name="username" type="text" placeholder="Username" autocomplete="off">
+    </div>
+    <div class="mb-10">
+      <label class="block text-gray-700 text-base font-semibold mb-2" for="password">
+        Password
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="passwd" type="password" placeholder="******************">
+    </div>
+    <div class="flex items-center justify-between">
+      <input type="submit" value="LogIn" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
+    </div>
+  </form>
+</div>
+</body>
+
+</html>
